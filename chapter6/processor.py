@@ -12,7 +12,7 @@ class MotionDetector(object):
 		# 動体検知処理の呼び出しをおこなう
         # フレームはJPEG画像に変換して戻り値にする
         frame = self.detect()
-        _, jpeg = cv2.imencode('.jpg', frame)
+	_, jpeg = cv2.imencode('.jpg', frame)
         return jpeg.tobytes()
 
     def detect(self):
