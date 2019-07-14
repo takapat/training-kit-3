@@ -59,7 +59,7 @@ class SingleCounter(object):
         # detectメソッドを呼び出し、
         # 受け取ったフレームをJPEG画像に変換する
         frame = self.detect()
-        ret, jpeg = cv2.imencode('.jpg', frame)
+        , jpeg = cv2.imencode('.jpg', frame)
         return jpeg.tobytes()
         
     def detect(self):
