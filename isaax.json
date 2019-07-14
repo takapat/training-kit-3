@@ -1,17 +1,13 @@
 {
-
-    "name": "iotkit-3 sample3",
-
-    "author": "",
-
-    "version": "0.1",
-
-    "license": "Apache 2.0",
-
-    "scripts": {
-
-        "start": "python3 -u /var/isaax/project/chapter6/main.py"
-
-    }
-
+  "name": "sample3",
+  "version": "0.0.0",
+  "description": "",
+  "main": "main.py",
+  "author": "isaaxug",
+  "license": "GPL",
+  "language":"python",
+  "scripts": {
+     "start": "python3 chapter6/main.py"
+    },
+   "dependency": null
 }
