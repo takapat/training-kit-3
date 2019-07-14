@@ -1,6 +1,6 @@
 {
 
-    "name": "iotkit-3 sample",
+    "name": "iotkit-3 sample3",
 
     "author": "",
 
@@ -10,7 +10,7 @@
 
     "scripts": {
 
-        "start": "python3 -u chapter6/main.py"
+        "start": "python3 chapter6/main.py"
 
     }
 
