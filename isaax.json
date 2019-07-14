@@ -1,1 +1,17 @@
+{
 
+    "name": "iotkit-3 sample",
+
+    "author": "",
+
+    "version": "0.1",
+
+    "license": "Apache 2.0",
+
+    "scripts": {
+
+        "start": "python3 -u chapter6/main.py"
+
+    }
+
+}
