@@ -10,7 +10,7 @@
 
     "scripts": {
 
-        "start": "python3 -u main.py"
+        "start": "python3 -u ./chapter6/main.py"
 
     }
 
