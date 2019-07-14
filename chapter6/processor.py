@@ -11,7 +11,7 @@ class MotionDetector(object):
     def get_frame(self):
 		# 動体検知処理の呼び出しをおこなう
         # フレームはJPEG画像に変換して戻り値にする
-        frame = self.detect()
+	frame = self.detect()
 	_, jpeg = cv2.imencode('.jpg', frame)
         return jpeg.tobytes()
 
@@ -59,7 +59,7 @@ class SingleCounter(object):
         # detectメソッドを呼び出し、
         # 受け取ったフレームをJPEG画像に変換する
         frame = self.detect()
-        , jpeg = cv2.imencode('.jpg', frame)
+        _, jpeg = cv2.imencode('.jpg', frame)
         return jpeg.tobytes()
         
     def detect(self):
