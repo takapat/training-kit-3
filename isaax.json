@@ -10,7 +10,7 @@
 
     "scripts": {
 
-        "start": "python3 /var/isaax/project/chapter6/main.py"
+        "start": "python3 -u main.py"
 
     }
 
