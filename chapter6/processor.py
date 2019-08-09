@@ -32,11 +32,11 @@ class MotionDetector(object):
 			cv2.CHAIN_APPROX_SIMPLE)[1]
 
 		for c in cnts:
-			if cv2.contourArea(c) < 500:
+			if cv2.contourArea(c) < 2000:
 				continue
 
 			(x, y, w, h) = cv2.boundingRect(c)
-			cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+			cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 255, 0), 2)
 		
 		return frame
 
@@ -51,8 +51,8 @@ class SingleCounter(object):
 		self.track_time = time.time()
 		self.track_list = []
 		self.timeout = 0.5
-		self.total_up = 0
-		self.total_down = 0
+		self.total_right = 0
+		self.total_left = 0
 
 #フレーム取り出し
 	def get_frame(self):
@@ -97,30 +97,11 @@ class SingleCounter(object):
 			cv2.rectangle(frame, (x, y), (x + w, y + h), (0.255, 0), 2)
 			cv2.circle(frame, (cx, cy), 5, (0, 0, 255), 2)
 
-			elapsed = time.time() - self.track_time
-			if  elapsed >= self.timeout:
-				track_list = []
-
-			self.track_time = time.time()
-			self.track_list.append(cy)
-
-			border_y = self.height // 2
-			if len(self.track_list) >1:
-				latest = self.track_list[-1]
-				oldest = self.track_list[0]
-
-				if oldest > border_y and latest < border_y:
-					self.total_up += 1
-					self.track_list = []
-				elif oldest < border_y and latest > border_y:
-					self.total_down += 1
-					self.track_list = []
-		
-		cv2.line(frame, (0, border_y), (self.width, border_y),
-					(0, 255, 255), 2)
-		cv2.putText(frame, "Up: {}".format(self.total_up), (10, self.height - 20),
-		cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
-		cv2.putText(frame, "Down: {}".format(self.total_down), (10, self.height - 40),
-		cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
-
+			
 		return frame
+
+
+		
+
+
+
