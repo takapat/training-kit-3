@@ -81,7 +81,7 @@ class SingleCounter(object):
 		cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
 			cv2.CHAIN_APPROX_SIMPLE)[1]
 
-		biggest_area = 800
+		biggest_area = 400
 		motion_found = False
 		for c in cnts:
 			found_area = cv2.contourArea(c)
